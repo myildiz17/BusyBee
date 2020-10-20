@@ -1,0 +1,24 @@
+<h1>Busy Bee</h1>
+
+<h3>Hi, I'm <%= @worker_bee.name %>!</h3>
+
+<h3>Age: <%= worker_bee.age %></h3>
+
+<h3>I can help you as a: </h3>
+<ol>
+    <% @worker_bee.skill_set.each do |skill| %>
+        <li>
+            <%= skill.name %>
+        </li>
+    <% end %>
+
+<h3>My going rate is <%= worker_bee.rate%>.</h3>
+
+<% if @worker_bee.availability == true %>
+  <%= button_to "Hire me!", action: "new" %>
+<% else %>
+  <%=<h4>I'm just such a busy bee these days. Sorry!</h4> %>
+<% end %>
+
+
+</ol>

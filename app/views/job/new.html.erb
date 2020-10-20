@@ -1,0 +1,27 @@
+<h1>Book a Bee</h1>
+  
+<% if flash[:errors] %>
+    <% flash[:errors].each do |err| %>
+        <p style="color: red"><%= err %></p>
+    <% end %>
+<% end %>
+
+<%= form_for @job do |f| %>
+    <%= f.label :worker_bee %>
+    <%= f.collection_select :worker_bee_id, @worker_bees, :id, :name %>
+
+    <%= f.label :category %>
+    <%= f.collection_select :category, ['Landscaper', 'Dog Walker', 'Babysitter'] %>
+
+    <%= f.label :total_time %>
+    <%= f.text_field :total_time %>
+
+    <%= f.label :date %>
+    <%= f.select_date Date.future, prefix: :start_date %>
+
+    <%= f.label :time %>
+    <%= f.select_time #:dog_id, @dogs, :id, :name %>
+
+    <%= f.submit %>
+    
+<% end %>

@@ -1,0 +1,7 @@
+<h1>Jobs</h1>
+
+<% @neighbor.each do |job| %>
+    <p>
+        <%= link_to job.category, neighbor_path(job) %>
+    </p>
+<% end %>

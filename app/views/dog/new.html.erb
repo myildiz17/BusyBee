@@ -1,0 +1,25 @@
+<% if flash[:errors] %>
+    <% flash[:errors].each do |err| %>
+        <p style="color: red"><%= err %></p>
+    <% end %>
+<% end %>
+
+<%= form_for @dog do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :breed %>
+    <%= f.text_field :breed %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+
+    <%= f.label :neighbor_id %>
+    <%= f.collection_select :neighbor_id, @neighbors, :id, :name %>
+
+    <%= f.submit %>
+    
+<% end %>
