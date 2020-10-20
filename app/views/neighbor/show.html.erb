@@ -1,0 +1,46 @@
+
+<h1>Howdy, Neighbor!</h1>
+
+<% if flash[:success] %>
+    <p style="color: green"><%= flash[:success] %></p>
+<% end %>
+
+<div>
+    <h1> <%= @neighbor.name %> </h1>
+    <h2> <%= @neighbor.address %> <h2>
+
+    <h3> Children: </h3>
+    <ol>
+        <% @neighbor.children.each do |name| %>
+            <li>
+                <%= child.name %>
+            </li>
+        <% end %>
+    </ol>
+
+    <h3> Dogs: </h3>
+    <ol>
+        <% @neighbor.dogs.each do |dog| %>
+            <li>
+                <%= dog.name %>
+            </li>
+        <% end %>
+    </ol>
+
+    <h4> Need a busy bee? </h4>
+    <%= button_to "Bzz bzz!", action: "new" %>
+
+    <h2>
+        My title is <%= @employee.title %>.
+    </h2>
+
+    <h2>
+        I work at the <%= @employee.office %> Office.
+    </h2>
+
+    <%= image_tag @employee.img_url, alt: "Employee Picture" %>
+
+    <h2>
+        My dog is <%= @employee.dog.name %>.
+    </h2>
+</div>
