@@ -1,7 +1,7 @@
   
 <h1>The Bee Hive</h1>
 
-<% @worker_bee.each do |bee| %>
+<% @worker_bees.each do |bee| %>
     <p>
         <%= link_to bee.name, worker_bee_path(bee) %>
     </p>

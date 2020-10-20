@@ -1,4 +1,4 @@
-class BeesController < ApplicationController
+class WorkerBeesController < ApplicationController
     before_action :set_bee, only: [:show, :edit, :update, :destroy]
   
     def index

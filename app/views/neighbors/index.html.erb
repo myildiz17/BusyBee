@@ -1,0 +1,6 @@
+<h1>All The Neighbors</h1>
+<ul>
+  <% @neighbors.each do |neighbor| %>
+    <li><%= link_to neighbor.name, neighbor_path(neighbor) %></li>
+  <% end %>
+</ul>
