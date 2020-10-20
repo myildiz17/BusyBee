@@ -1,4 +1,4 @@
 class Job < ApplicationRecord
     belongs_to :neighbor
-    belongs_to :busy_bee
+    belongs_to :worker_bee
 end

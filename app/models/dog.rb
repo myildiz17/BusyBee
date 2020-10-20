@@ -1,3 +1,3 @@
 class Dog < ApplicationRecord
-    belongs_to :dogs
+    belongs_to :neighbor
 end
