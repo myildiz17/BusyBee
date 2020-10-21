@@ -2,9 +2,9 @@ class WorkerBeesController < ApplicationController
     before_action :set_bee, only: [:show, :edit, :update, :destroy]
   
     def index
-      @worker_bees = WorkerBee.all
-    end
-  
+      @worker_bees = WorkerBee.filter(params.slice(:name, :skill_set, :rate, :availability))
+    end  
+
     def show
     end
   
