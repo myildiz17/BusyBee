@@ -8,7 +8,9 @@
 <p>Worker Bee Id: <%= @job.worker_bee_id %></p>
 <p>Date: <%= @job.date %></p>
 
-
+<%= link_to "Profile Page", neighbor_path(@job.neighbor_id)%>
+  <%= button_to "Delete", job_path(@job), {method: :delete} %>
+  <%= link_to "Update", edit_job_path(@job)%>
 
 
  

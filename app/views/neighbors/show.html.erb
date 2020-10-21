@@ -34,8 +34,8 @@
     <ol>
         <% @neighbor.jobs.each do |job| %>
             <li>
-                <p><%= job.category%></p>
-                <p><%= WorkerBee.find(job.worker_bee_id).name%></p>
+                <p>Category:<%=job.category%></p>
+                <p>Name of the Worker Bee:<%= link_to WorkerBee.find(job.worker_bee_id).name, job_path(job)%></p>
               
             </li>
         <% end %>
