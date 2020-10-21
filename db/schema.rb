@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_19_182653) do
+ActiveRecord::Schema.define(version: 2020_10_21_211456) do
 
   create_table "children", force: :cascade do |t|
     t.integer "neighbor_id"
