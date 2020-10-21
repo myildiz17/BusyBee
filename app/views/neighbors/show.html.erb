@@ -1,0 +1,56 @@
+
+<h1>Howdy, Neighbor!</h1>
+
+<% if flash[:success] %>
+    <p style="color: green"><%= flash[:success] %></p>
+<% end %>
+
+<div>
+    <h1> <%= @neighbor.name %> </h1>
+    <h2> <%= @neighbor.address %> <h2>
+
+    <h3> Children: </h3>
+    <ol>
+        <% @neighbor.children.each do |child| %>
+            <li>
+                <%= link_to child.name, child_path(child) %>
+            </li>
+        <% end %>
+    </ol>
+    <br>
+<%= link_to "Add a Child", new_child_path %>
+    <h3> Dogs: </h3>
+    <ol>
+        <% @neighbor.dogs.each do |dog| %>
+            <li>
+                <%= link_to dog.name, dog_path(dog) %>
+            </li>
+        <% end %>
+    </ol>
+        <br>
+<%= link_to "Add a Dog", new_dog_path %>
+
+<h3> Jobs: </h3>
+    <ol>
+        <% @neighbor.jobs.each do |job| %>
+            <li>
+                <p><%= job.category%></p>
+                <p><%= WorkerBee.find(job.worker_bee_id).name%></p>
+              
+            </li>
+        <% end %>
+    </ol>
+
+</div>
+    <br>
+<%= link_to "Add a new job", new_job_path %> 
+<br>
+<br>
+<br>
+<br>
+<%= link_to "Index Page", neighbors_path%>
+<br>
+<br>
+  <%= button_to "Delete", neighbor_path(@neighbor), {method: :delete} %>
+
+    

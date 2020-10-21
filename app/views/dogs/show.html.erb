@@ -1,0 +1,15 @@
+<h1>Dog's Show Page</h1>
+
+<% if flash[:success] %>
+    <p><%= flash[:success] %></p>
+    <% end %>
+
+<p>Name: <%= @dog.name %></p>
+<p>Breed: <%= @dog.breed %></p>
+<p>Age: <%= @dog.age %></p>
+
+  <%= link_to "Profile Page", neighbor_path(@dog.neighbor_id)%>
+  <%= button_to "Delete", dog_path(@dog), {method: :delete} %>
+  <%= link_to "Update", edit_dog_path(@dog)%>
+
+  

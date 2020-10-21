@@ -1,0 +1,6 @@
+<h1>I'm a cranky baby</h1>
+<ul>
+  <% @children.each do |child| %>
+    <li><%= link_to child.name, children_path(child) %></li>
+  <% end %>
+</ul>
