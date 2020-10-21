@@ -2,6 +2,8 @@ class JobsController < ApplicationController
 
     def index
         @jobs = Job.all
+        session[:dog] || session[:dog] = []
+        @dog_jobs = Job.find(session[:dog])
     end
     
 private

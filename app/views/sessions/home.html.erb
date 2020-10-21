@@ -1,0 +1,20 @@
+<h1>Home</h1>
+<div class= "Sign_Form">
+session[:neighbor] = @neighbor
+flash[:message] = "Data was saved successfully"
+
+<%= link_to "login", :action => 'login' unless session[:neighbor] %>
+<% if flash[:message] %>
+<div><%= h flash[:message] %></div>
+
+<div class= "Sign_Form">
+  
+  <%= form_tag(:action => 'login_attempt') do %>
+    <p>Neighbor name:</br> <%= text_field_tag(:neighbor_name) %></p> 
+    <p>Password:</br> <%= password_field_tag :login_password %></p> 
+    <%= submit_tag("Log In") %>
+  <% end %>
+<% end %>
+
+
+

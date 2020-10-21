@@ -47,7 +47,7 @@ class SkillsController < ApplicationController
     def destroy
       @skill.destroy
       respond_to do |format|
-        format.html { redirect_to skills_url, notice: 'Skill was successfully destroyed.' }
+        format.html { redirect_to skills_url, notice: 'Skill was successfully deleted.' }
         format.json { head :no_content }
       end
     end

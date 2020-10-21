@@ -1,10 +1,11 @@
-<h1>Login</h1>
-   <%= form_tag '/login' do %>
-   <%= label_tag :username%>
-   <%= text_field_tag :username %>
-   <%= label_tag :password%>
-   <%= password_field_tag :password%>
-   <%= submit_tag "Login"%>
-   <%= f.label :img_url %>
-   <%= f.text_field :img_url %>
+<h1>Sign Up</h1>
+
+   <%= form_tag sessions_path do %>
+      <%= label_tag "Username" %>
+      <%= text_field_tag :name %>
+      <%= label_tag "Address" %>
+      <%= text_field_tag :address %>
+      <%= label_tag "Password" %>
+      <%= password_field_tag :password %>
+      <%= submit_tag "Sign Up" %>
 <%end%>

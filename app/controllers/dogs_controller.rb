@@ -4,6 +4,9 @@ class DogsController < ApplicationController
   
     def index
       @dogs = Dog.all
+      sesion[:dog] || = []
+      session[:dog] << params[:neighbor_id]
+      redirect_to neighbors_path
     end
   
     

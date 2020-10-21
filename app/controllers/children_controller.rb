@@ -20,7 +20,6 @@ class ChildrenController < ApplicationController
   
     def create
       @child = Child.new(job_params)
-  
       respond_to do |format|
         if @child.save
           format.html { redirect_to @child, notice: 'Child was successfully added.' }
@@ -36,6 +35,7 @@ class ChildrenController < ApplicationController
       respond_to do |format|
         if @child.update(job_params)
           format.html { redirect_to @child, notice: 'Child was successfully updated.' }
+          get_neighbor
           format.json { render :show, status: :ok, location: @child }
         else
           format.html { render :edit }
