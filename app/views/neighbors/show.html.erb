@@ -13,7 +13,7 @@
     <ol>
         <% @neighbor.children.each do |child| %>
             <li>
-                <%= link_to child.name, child_path(child) %>
+                <%= link_to child.name, neighbor_child_path(@neighbor,child) %>
             </li>
         <% end %>
     </ol>
@@ -23,7 +23,7 @@
     <ol>
         <% @neighbor.dogs.each do |dog| %>
             <li>
-                <%= link_to dog.name, neighbor_dog_path(dog) %>
+                <%= link_to dog.name, neighbor_dog_path(@neighbor,dog) %>
             </li>
         <% end %>
     </ol>

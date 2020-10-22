@@ -19,7 +19,8 @@ class ChildrenController < ApplicationController
   
    
     def edit
-      @neighbors = Neighbor.all
+      @neighbor = Neighbor.find(params[:neighbor_id])
+      @child = Child.find(params[:id])
     end
   
     def create
@@ -40,10 +41,10 @@ class ChildrenController < ApplicationController
         @child.update(child_params)
         if @child.save 
             flash[:success] = "child Successfully Created!"
-            redirect_to child_path(@child)
+            redirect_to neighbor_child_path(@child.neighbor, @child)
         else 
             flash[:errors] = @child.errors.full_messages
-            redirect_to edit_child_path(@child)
+            redirect_to edit_neighbor_child_path(@child.neighbor, @child)
         end 
     end
   

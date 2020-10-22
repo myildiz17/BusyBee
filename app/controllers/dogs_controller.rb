@@ -8,6 +8,7 @@ class DogsController < ApplicationController
    
     
     def show
+      
       @neighbor = Neighbor.find(params[:neighbor_id])
     end
   
@@ -20,7 +21,10 @@ class DogsController < ApplicationController
   
    
     def edit
-      @neighbors = Neighbor.all
+      # @neighbors = Neighbor.all
+      @neighbor = Neighbor.find(params[:neighbor_id])
+      @dog = Dog.find(params[:id])
+      
     end
   
     def create
@@ -41,13 +45,14 @@ class DogsController < ApplicationController
   
     def update
       @dog = Dog.find(params[:id])
-        @dog.update(dog_params)
+      @dog.update(dog_params)
+    
         if @dog.save 
             flash[:success] = "dog Successfully Created!"
-            redirect_to dog_path(@dog)
+            redirect_to neighbor_dog_path(@dog.neighbor, @dog)
         else 
             flash[:errors] = @dog.errors.full_messages
-            redirect_to edit_dog_path(@dog)
+            redirect_to edit_neighbor_dog_path(@dog.neighbor, @dog)
         end 
     end
   
