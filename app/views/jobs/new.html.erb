@@ -24,13 +24,58 @@
     <%= f.label :worker_bee_id %>
     <%= f.collection_select :worker_bee_id, @worker_bees, :id, :name %>
     <%= f.submit %>
-    
-    <% arr=[] %>
-    <% @worker_bees.each do |bee|%>
-    <p><% arr << ("#{bee.rate}"+"    "+"#{bee.skill_set}"+"  "+"#{bee.name}") %></P>
-    <% end %>
-     <% arr.sort.each do |ar| %>
-     <p><%= ar %></>
-     <% end %>
 
 <% end %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#worker_bees {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+#worker_bees td, #worker_bees th {
+  border: 1px solid #343434;
+  padding: 8px;
+}
+
+#worker_bees tr:nth-child(even){background-color: #343434;}
+
+#worker_bees tr:hover {background-color: #343434;}
+
+#worker_bees th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #f2ff00;
+  color: black;
+}
+</style>
+</head>
+<body>
+
+ <table id="worker_bees">
+<thead>
+<tr>
+<th>Name</th>
+<th>Skills</th>
+<th>Rate</th>
+<th>Availability</th>
+</tr>
+</thead>
+<tbody>
+<% @worker_bees.sort.each do |worker_bee| %>
+<tr>
+<td><%= worker_bee.name %></td>
+<td><%= worker_bee.skill_set %></td>
+<td><%= worker_bee.rate %></td>
+<td><%= worker_bee.availability %></td>
+<% end %>
+</tbody>
+</table>
+
+</body>
+</html>
