@@ -18,7 +18,7 @@
         <% end %>
     </ol>
     <br>
-<%= button_to "Add a Child", new_neighbor_child_path(@neighbor) %>
+<%= link_to "Add a Child", new_neighbor_child_path(@neighbor) %>
     <h3> Dogs: </h3>
     <ol>
         <% @neighbor.dogs.each do |dog| %>
@@ -28,7 +28,7 @@
         <% end %>
     </ol>
         <br>
-<%= button_to "Add a Dog", new_neighbor_dog_path(@neighbor) %>
+<%= link_to "Add a Dog", new_neighbor_dog_path(@neighbor) %>
 
 <h3> Jobs: </h3>
     <ol>
@@ -43,12 +43,12 @@
 
 </div>
     <br>
-<%= button_to "Add a new job", new_job_path %> 
+<%= link_to "Add a new job", new_job_path %> 
 <br>
 <br>
 <br>
 <br>
-<%= button_to "Index Page", neighbors_path%>
+<%= link_to "Index Page", neighbors_path%>
 <br>
 <br>
   <%= button_to "Delete", neighbor_path(@neighbor), {method: :delete} %>

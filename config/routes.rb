@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 resources :worker_bees
 resources :jobs
 
-resources :children
+# resources :children
 resources :skills
 # resources :neighbors do
 #   resources :children, :dogs

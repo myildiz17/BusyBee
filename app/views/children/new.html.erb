@@ -3,14 +3,17 @@
         <p style="color: red"><%= err %></p>
     <% end %>
 <% end %>
-
+<br>
+<br>
 <%= form_for [@neighbor, @child] do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
-
+    <br>
+    <br>
     <%= f.label :age %>
     <%= f.text_field :age %>
-
+    <br>
+    <br>
 
     <%= f.submit %>
     

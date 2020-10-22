@@ -11,6 +11,7 @@ class ChildrenController < ApplicationController
       @neighbor = Neighbor.find(params[:neighbor_id])
     end
   
+
     def new
       
       @neighbor = Neighbor.find(params[:neighbor_id])
