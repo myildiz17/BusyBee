@@ -8,12 +8,13 @@ class ChildrenController < ApplicationController
   
     
     def show
-      
+      @neighbor = Neighbor.find(params[:neighbor_id])
     end
   
     def new
-      @child = Child.new
-      @neighbors = Neighbor.all
+      
+      @neighbor = Neighbor.find(params[:neighbor_id])
+      @child = @neighbor.children.new
     end
   
    
@@ -22,14 +23,15 @@ class ChildrenController < ApplicationController
     end
   
     def create
-      child = Child.create(child_params)
+      @neighbor = Neighbor.find(params[:neighbor_id])
+      @child = @neighbor.children.create(child_params)
       
 
-        if child.save 
-            redirect_to child_path(child)
+        if @child.save 
+            redirect_to neighbor_child_path(@neighbor, @child)
         else
-            flash[:errors]= child.errors.full_messages
-            redirect_to new_child_path(child)
+            flash[:errors]= @child.errors.full_messages
+            redirect_to new_child_path(@child)
         end
     end
   

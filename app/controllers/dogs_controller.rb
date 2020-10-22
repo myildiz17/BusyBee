@@ -5,7 +5,7 @@ class DogsController < ApplicationController
     def index
       @dogs = Dog.all
     end
-  
+   
     
     def show
       @neighbor = Neighbor.find(params[:neighbor_id])

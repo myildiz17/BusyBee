@@ -18,7 +18,7 @@
         <% end %>
     </ol>
     <br>
-<%= link_to "Add a Child", new_child_path %>
+<%= link_to "Add a Child", new_neighbor_child_path(@neighbor) %>
     <h3> Dogs: </h3>
     <ol>
         <% @neighbor.dogs.each do |dog| %>

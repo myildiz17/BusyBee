@@ -7,8 +7,12 @@ resources :jobs
 
 resources :children
 resources :skills
+# resources :neighbors do
+#   resources :children, :dogs
+# end
 resources :neighbors do
   resources :dogs
+  resources :children
 end
 
 end
