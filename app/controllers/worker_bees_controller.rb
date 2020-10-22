@@ -12,6 +12,11 @@ class WorkerBeesController < ApplicationController
       @worker_bee = WorkerBee.new
     end
   
+    def table_helper
+      @worker_bee = WorkerBee.includes(:requirements => [:actors]).find(params[:id])
+      @actors = @project.actors.index_by(&:id)
+    end
+
     def edit
     end
   
