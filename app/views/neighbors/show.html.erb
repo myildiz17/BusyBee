@@ -1,10 +1,10 @@
 
-<h1>Howdy, Neighbor!</h1>
+<h1><i>Howdy, Neighbor!</i></h1>
 
 <% if flash[:success] %>
     <p style="color: green"><%= flash[:success] %></p>
 <% end %>
-
+<br>
 <div>
     <h1> <%= @neighbor.name %> </h1>
     <h2> <%= @neighbor.address %> <h2>
@@ -18,7 +18,7 @@
         <% end %>
     </ol>
     <br>
-<%= link_to "Add a Child", new_neighbor_child_path(@neighbor) %>
+<%= button_to "Add a Child", new_neighbor_child_path(@neighbor) %>
     <h3> Dogs: </h3>
     <ol>
         <% @neighbor.dogs.each do |dog| %>
@@ -28,14 +28,14 @@
         <% end %>
     </ol>
         <br>
-<%= link_to "Add a Dog", new_neighbor_dog_path(@neighbor) %>
+<%= button_to "Add a Dog", new_neighbor_dog_path(@neighbor) %>
 
 <h3> Jobs: </h3>
     <ol>
         <% @neighbor.jobs.each do |job| %>
             <li>
-                <p>Category:<%=job.category%></p>
-                <p>Name of the Worker Bee:<%= link_to WorkerBee.find(job.worker_bee_id).name, job_path(job)%></p>
+                <p><%=job.category%></p>
+                <p>Worker Bee: <%= link_to WorkerBee.find(job.worker_bee_id).name, job_path(job)%></p>
               
             </li>
         <% end %>
@@ -43,12 +43,12 @@
 
 </div>
     <br>
-<%= link_to "Add a new job", new_job_path %> 
+<%= button_to "Add a new job", new_job_path %> 
 <br>
 <br>
 <br>
 <br>
-<%= link_to "Index Page", neighbors_path%>
+<%= button_to "Index Page", neighbors_path%>
 <br>
 <br>
   <%= button_to "Delete", neighbor_path(@neighbor), {method: :delete} %>
