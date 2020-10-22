@@ -1,4 +1,4 @@
-<h1>Dog's Show Page</h1>
+<h1>Dog's Profile Page</h1>
 
 <% if flash[:success] %>
     <p><%= flash[:success] %></p>
@@ -8,8 +8,10 @@
 <p>Breed: <%= @dog.breed %></p>
 <p>Age: <%= @dog.age %></p>
 
-  <%= link_to "Profile Page", neighbor_path(@dog.neighbor_id)%>
-  <%= button_to "Delete", dog_path(@dog), {method: :delete} %>
-  <%= link_to "Update", edit_dog_path(@dog)%>
+ <p> <%= link_to "Profile Page", neighbor_path(@dog.neighbor_id)%></p>
+  
+ <p> <%= link_to "Update", edit_neighbor_dog_path(@neighbor, @dog)%></p>
+  <br>
+  <%= button_to "Delete", neighbor_dog_path(@neighbor, @dog), {method: :delete} %>
 
   

@@ -8,11 +8,14 @@ class DogsController < ApplicationController
   
     
     def show
+      @neighbor = Neighbor.find(params[:neighbor_id])
     end
   
     def new
-      @dog = Dog.new
-      @neighbors = Neighbor.all
+      
+      @neighbor = Neighbor.find(params[:neighbor_id])
+      @dog = @neighbor.dogs.new
+      
     end
   
    
@@ -21,11 +24,13 @@ class DogsController < ApplicationController
     end
   
     def create
-      @dog = Dog.new(dog_params)
+      @neighbor = Neighbor.find(params[:neighbor_id])
+      @dog = @neighbor.dogs.create(dog_params)
+      
   
       respond_to do |format|
         if @dog.save
-          format.html { redirect_to @dog, notice: 'Dog was successfully added.' }
+          format.html { redirect_to neighbor_dog_path(@neighbor, @dog), notice: 'Dog was successfully added.' }
           format.json { render :show, status: :created, location: @dog }
         else
           format.html { render :new }

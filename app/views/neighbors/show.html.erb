@@ -23,12 +23,12 @@
     <ol>
         <% @neighbor.dogs.each do |dog| %>
             <li>
-                <%= link_to dog.name, dog_path(dog) %>
+                <%= link_to dog.name, neighbor_dog_path(dog) %>
             </li>
         <% end %>
     </ol>
         <br>
-<%= link_to "Add a Dog", new_dog_path %>
+<%= link_to "Add a Dog", new_neighbor_dog_path(@neighbor) %>
 
 <h3> Jobs: </h3>
     <ol>

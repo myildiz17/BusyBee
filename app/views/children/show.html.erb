@@ -1,4 +1,4 @@
-<h1>Child's Show Page</h1>
+<h1>Child's Profile Page</h1>
 
 <% if flash[:success] %>
     <p><%= flash[:success] %></p>
@@ -7,7 +7,8 @@
 <p>Child's Name: <%= @child.name %></p>
 <p>Worker Bee Id: <%= @child.age %></p>
 
-  <%= link_to "Profile Page", neighbor_path(@child.neighbor_id)%>
+ <p> <%= link_to "Profile Page", neighbor_path(@child.neighbor_id)%></p>
+  <p><%= link_to "Update", edit_child_path(@child)%></p>
+<br>
   <%= button_to "Delete", child_path(@child), {method: :delete} %>
-  <%= link_to "Update", edit_child_path(@child)%>
  

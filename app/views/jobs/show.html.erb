@@ -1,16 +1,20 @@
-<h1>Jobs Show Page</h1>
+<h1>Job's Profile Page</h1>
 
 <% if flash[:success] %>
     <p><%= flash[:success] %></p>
     <% end %>
 
-<p>Neighbir Id: <%= @job.neighbor_id %></p>
+<p>Neighbor Id: <%= @job.neighbor_id %></p>
 <p>Worker Bee Id: <%= @job.worker_bee_id %></p>
 <p>Date: <%= @job.date %></p>
+<p>Cost of the job: <%= "$#{@job.pay}" %></p>
 
-<%= link_to "Profile Page", neighbor_path(@job.neighbor_id)%>
-  <%= button_to "Delete", job_path(@job), {method: :delete} %>
-  <%= link_to "Update", edit_job_path(@job)%>
+<p><%= link_to "Profile Page", neighbor_path(@job.neighbor_id)%></p>
+
+  <p><%= link_to "Update", edit_job_path(@job)%></p>
+  <br>
+  <br>
+    <%= button_to "Delete", job_path(@job), {method: :delete} %>
 
 
  
