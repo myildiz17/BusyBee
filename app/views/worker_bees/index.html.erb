@@ -1,13 +1,43 @@
   
 <h1>The Bee Hive</h1>
 
-<table class="table table-hover">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#worker_bees {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#worker_bees td, #worker_bees th {
+  border: 1px solid #343434;
+  padding: 8px;
+}
+
+#worker_bees tr:nth-child(even){background-color: #343434;}
+
+#worker_bees tr:hover {background-color: #343434;}
+
+#worker_bees th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #f2ff00;
+  color: black;
+}
+</style>
+</head>
+<body>
+
+<table id="worker_bees">
 <thead>
   <tr>
-    <th>Name</th>
-    <th>Skills</th>
-    <th>Rate</th>
-    <th>Availability</th>
+    <th> onclick="sortTable(0)">Name</th>
+    <th> onclick="sortTable(1)">Skills</th>
+    <th> onclick="sortTable(2)">Rate</th>
+    <th> onclick="sortTable(3)">Availability</th>
   </tr>
  </thead>
  <tbody>
